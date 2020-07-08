@@ -143,16 +143,16 @@ whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel = What is the name of the ot
 whatIsTheNameOfTheOtherPerson.error.required = Enter the name of the other person
 whatIsTheNameOfTheOtherPerson.error.length = Other persons name must be 100 characters or less
 
-doYouKnowTheirDateOfBirth.title = doYouKnowTheirDateOfBirth
-doYouKnowTheirDateOfBirth.heading = doYouKnowTheirDateOfBirth
-doYouKnowTheirDateOfBirth.checkYourAnswersLabel = doYouKnowTheirDateOfBirth
-doYouKnowTheirDateOfBirth.error.required = Select yes if doYouKnowTheirDateOfBirth
+doYouKnowTheirDateOfBirth.title = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.heading = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.checkYourAnswersLabel = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.error.required = Select yes if do know their date of birth
 
-whatIsTheirDateOfBirth.title = WhatIsTheirDateOfBirth
-whatIsTheirDateOfBirth.heading = WhatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.title = What is their date of birth?
+whatIsTheirDateOfBirth.heading = What is their date of birth?
 whatIsTheirDateOfBirth.hint = For example, 12 11 2007
-whatIsTheirDateOfBirth.checkYourAnswersLabel = WhatIsTheirDateOfBirth
-whatIsTheirDateOfBirth.error.required.all = Enter the whatIsTheirDateOfBirth
-whatIsTheirDateOfBirth.error.required.two = The whatIsTheirDateOfBirth must include {0} and {1}
-whatIsTheirDateOfBirth.error.required = The whatIsTheirDateOfBirth must include {0}
-whatIsTheirDateOfBirth.error.invalid = Enter a real WhatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.checkYourAnswersLabel = What is their date of birth?
+whatIsTheirDateOfBirth.error.required.all = Enter their date of birth
+whatIsTheirDateOfBirth.error.required.two = The date of birth must include {0} and {1}
+whatIsTheirDateOfBirth.error.required = The date of birth must include {0}
+whatIsTheirDateOfBirth.error.invalid = Enter a real date of birth
