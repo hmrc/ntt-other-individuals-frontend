@@ -147,3 +147,12 @@ doYouKnowTheirDateOfBirth.title = doYouKnowTheirDateOfBirth
 doYouKnowTheirDateOfBirth.heading = doYouKnowTheirDateOfBirth
 doYouKnowTheirDateOfBirth.checkYourAnswersLabel = doYouKnowTheirDateOfBirth
 doYouKnowTheirDateOfBirth.error.required = Select yes if doYouKnowTheirDateOfBirth
+
+whatIsTheirDateOfBirth.title = WhatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.heading = WhatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.hint = For example, 12 11 2007
+whatIsTheirDateOfBirth.checkYourAnswersLabel = WhatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.error.required.all = Enter the whatIsTheirDateOfBirth
+whatIsTheirDateOfBirth.error.required.two = The whatIsTheirDateOfBirth must include {0} and {1}
+whatIsTheirDateOfBirth.error.required = The whatIsTheirDateOfBirth must include {0}
+whatIsTheirDateOfBirth.error.invalid = Enter a real WhatIsTheirDateOfBirth

@@ -18,7 +18,7 @@ package navigation
 
 import controllers.routes
 import models.{NormalMode, UserAnswers}
-import pages.{DoOtherPeopleHaveControlOverTheTrustPage, IndexPage, Page, WhatIsTheNameOfTheOtherPersonPage}
+import pages.{DoOtherPeopleHaveControlOverTheTrustPage, DoYouKnowTheirDateOfBirthPage, IndexPage, Page, WhatIsTheNameOfTheOtherPersonPage}
 import play.api.mvc.Call
 
 object NormalRoutes {
@@ -26,6 +26,7 @@ object NormalRoutes {
     case IndexPage                                  => _ => routes.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(NormalMode)
     case DoOtherPeopleHaveControlOverTheTrustPage   => _ => routes.WhatIsTheNameOfTheOtherPersonController.onPageLoad(NormalMode)
     case WhatIsTheNameOfTheOtherPersonPage          => _ => routes.DoYouKnowTheirDateOfBirthController.onPageLoad(NormalMode)
+    case DoYouKnowTheirDateOfBirthPage              => _ => routes.WhatIsTheirDateOfBirthController.onPageLoad(NormalMode)
     case _                                          => _ => routes.IndexController.onPageLoad()
   }
 }
