@@ -29,6 +29,21 @@ import uk.gov.hmrc.viewmodels.Text.Literal
 
 class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messages) {
 
+  def doYouKnowTheirDateOfBirth: Option[Row] = userAnswers.get(DoYouKnowTheirDateOfBirthPage) map {
+    answer =>
+      Row(
+        key     = Key(msg"doYouKnowTheirDateOfBirth.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
+        value   = Value(yesOrNo(answer)),
+        actions = List(
+          Action(
+            content            = msg"site.edit",
+            href               = routes.DoYouKnowTheirDateOfBirthController.onPageLoad(CheckMode).url,
+            visuallyHiddenText = Some(msg"site.edit.hidden".withArgs(msg"doYouKnowTheirDateOfBirth.checkYourAnswersLabel"))
+          )
+        )
+      )
+  }
+
   def whatIsTheNameOfTheOtherPerson: Option[Row] = userAnswers.get(WhatIsTheNameOfTheOtherPersonPage) map {
     answer =>
       Row(

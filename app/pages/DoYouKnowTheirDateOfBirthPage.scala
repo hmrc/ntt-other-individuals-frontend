@@ -14,19 +14,13 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import org.scalacheck.Arbitrary
-import pages._
+import play.api.libs.json.JsPath
 
-trait PageGenerators {
+case object DoYouKnowTheirDateOfBirthPage extends QuestionPage[Boolean] {
 
-  implicit lazy val arbitraryDoYouKnowTheirDateOfBirthPage: Arbitrary[DoYouKnowTheirDateOfBirthPage.type] =
-    Arbitrary(DoYouKnowTheirDateOfBirthPage)
+  override def path: JsPath = JsPath \ toString
 
-  implicit lazy val arbitraryWhatIsTheNameOfTheOtherPersonPage: Arbitrary[WhatIsTheNameOfTheOtherPersonPage.type] =
-    Arbitrary(WhatIsTheNameOfTheOtherPersonPage)
-
-  implicit lazy val arbitraryDoOtherPeopleHaveControlOverTheTrustPage: Arbitrary[DoOtherPeopleHaveControlOverTheTrustPage.type] =
-    Arbitrary(DoOtherPeopleHaveControlOverTheTrustPage)
+  override def toString: String = "doYouKnowTheirDateOfBirth"
 }

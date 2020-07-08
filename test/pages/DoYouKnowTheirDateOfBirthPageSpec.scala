@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import org.scalacheck.Arbitrary
-import pages._
+import pages.behaviours.PageBehaviours
 
-trait PageGenerators {
+class DoYouKnowTheirDateOfBirthPageSpec extends PageBehaviours {
 
-  implicit lazy val arbitraryDoYouKnowTheirDateOfBirthPage: Arbitrary[DoYouKnowTheirDateOfBirthPage.type] =
-    Arbitrary(DoYouKnowTheirDateOfBirthPage)
+  "DoYouKnowTheirDateOfBirthPage" - {
 
-  implicit lazy val arbitraryWhatIsTheNameOfTheOtherPersonPage: Arbitrary[WhatIsTheNameOfTheOtherPersonPage.type] =
-    Arbitrary(WhatIsTheNameOfTheOtherPersonPage)
+    beRetrievable[Boolean](DoYouKnowTheirDateOfBirthPage)
 
-  implicit lazy val arbitraryDoOtherPeopleHaveControlOverTheTrustPage: Arbitrary[DoOtherPeopleHaveControlOverTheTrustPage.type] =
-    Arbitrary(DoOtherPeopleHaveControlOverTheTrustPage)
+    beSettable[Boolean](DoYouKnowTheirDateOfBirthPage)
+
+    beRemovable[Boolean](DoYouKnowTheirDateOfBirthPage)
+  }
 }

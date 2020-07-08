@@ -24,3 +24,8 @@ GET        /whatIsTheNameOfTheOtherPerson                        controllers.Wha
 POST       /whatIsTheNameOfTheOtherPerson                        controllers.WhatIsTheNameOfTheOtherPersonController.onSubmit(mode: Mode = NormalMode)
 GET        /changeWhatIsTheNameOfTheOtherPerson                  controllers.WhatIsTheNameOfTheOtherPersonController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeWhatIsTheNameOfTheOtherPerson                  controllers.WhatIsTheNameOfTheOtherPersonController.onSubmit(mode: Mode = CheckMode)
+
+GET        /doYouKnowTheirDateOfBirth                        controllers.DoYouKnowTheirDateOfBirthController.onPageLoad(mode: Mode = NormalMode)
+POST       /doYouKnowTheirDateOfBirth                        controllers.DoYouKnowTheirDateOfBirthController.onSubmit(mode: Mode = NormalMode)
+GET        /changeDoYouKnowTheirDateOfBirth                  controllers.DoYouKnowTheirDateOfBirthController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeDoYouKnowTheirDateOfBirth                  controllers.DoYouKnowTheirDateOfBirthController.onSubmit(mode: Mode = CheckMode)

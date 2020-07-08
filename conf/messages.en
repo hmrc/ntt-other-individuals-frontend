@@ -142,3 +142,8 @@ whatIsTheNameOfTheOtherPerson.heading = What is the name of the other person?
 whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel = What is the name of the other person?
 whatIsTheNameOfTheOtherPerson.error.required = Enter the name of the other person
 whatIsTheNameOfTheOtherPerson.error.length = Other persons name must be 100 characters or less
+
+doYouKnowTheirDateOfBirth.title = doYouKnowTheirDateOfBirth
+doYouKnowTheirDateOfBirth.heading = doYouKnowTheirDateOfBirth
+doYouKnowTheirDateOfBirth.checkYourAnswersLabel = doYouKnowTheirDateOfBirth
+doYouKnowTheirDateOfBirth.error.required = Select yes if doYouKnowTheirDateOfBirth
