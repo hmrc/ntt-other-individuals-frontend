@@ -19,3 +19,8 @@ GET        /doOtherPeopleHaveControlOverTheTrust                        controll
 POST       /doOtherPeopleHaveControlOverTheTrust                        controllers.DoOtherPeopleHaveControlOverTheTrustController.onSubmit(mode: Mode = NormalMode)
 GET        /changeDoOtherPeopleHaveControlOverTheTrust                  controllers.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeDoOtherPeopleHaveControlOverTheTrust                  controllers.DoOtherPeopleHaveControlOverTheTrustController.onSubmit(mode: Mode = CheckMode)
+
+GET        /whatIsTheNameOfTheOtherPerson                        controllers.WhatIsTheNameOfTheOtherPersonController.onPageLoad(mode: Mode = NormalMode)
+POST       /whatIsTheNameOfTheOtherPerson                        controllers.WhatIsTheNameOfTheOtherPersonController.onSubmit(mode: Mode = NormalMode)
+GET        /changeWhatIsTheNameOfTheOtherPerson                  controllers.WhatIsTheNameOfTheOtherPersonController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeWhatIsTheNameOfTheOtherPerson                  controllers.WhatIsTheNameOfTheOtherPersonController.onSubmit(mode: Mode = CheckMode)

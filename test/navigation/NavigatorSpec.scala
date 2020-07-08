@@ -53,6 +53,16 @@ class NavigatorSpec extends SpecBase with ScalaCheckPropertyChecks with Generato
               .mustBe(routes.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(NormalMode))
         }
       }
+
+      "must go from Do Other have control over trust page to what is others name page" in {
+
+        forAll(arbitrary[UserAnswers]) {
+          answers =>
+
+            navigator.nextPage(DoOtherPeopleHaveControlOverTheTrustPage, NormalMode, answers)
+              .mustBe(routes.WhatIsTheNameOfTheOtherPersonController.onPageLoad(NormalMode))
+        }
+      }
     }
 
     "in Check mode" - {

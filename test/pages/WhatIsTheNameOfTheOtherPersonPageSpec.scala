@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import org.scalacheck.Arbitrary
-import pages._
+import pages.behaviours.PageBehaviours
 
-trait PageGenerators {
 
-  implicit lazy val arbitraryWhatIsTheNameOfTheOtherPersonPage: Arbitrary[WhatIsTheNameOfTheOtherPersonPage.type] =
-    Arbitrary(WhatIsTheNameOfTheOtherPersonPage)
+class WhatIsTheNameOfTheOtherPersonPageSpec extends PageBehaviours {
 
-  implicit lazy val arbitraryDoOtherPeopleHaveControlOverTheTrustPage: Arbitrary[DoOtherPeopleHaveControlOverTheTrustPage.type] =
-    Arbitrary(DoOtherPeopleHaveControlOverTheTrustPage)
+  "WhatIsTheNameOfTheOtherPersonPage" - {
+
+    beRetrievable[String](WhatIsTheNameOfTheOtherPersonPage)
+
+    beSettable[String](WhatIsTheNameOfTheOtherPersonPage)
+
+    beRemovable[String](WhatIsTheNameOfTheOtherPersonPage)
+  }
 }

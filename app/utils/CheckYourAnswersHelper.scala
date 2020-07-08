@@ -29,6 +29,21 @@ import uk.gov.hmrc.viewmodels.Text.Literal
 
 class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messages) {
 
+  def whatIsTheNameOfTheOtherPerson: Option[Row] = userAnswers.get(WhatIsTheNameOfTheOtherPersonPage) map {
+    answer =>
+      Row(
+        key     = Key(msg"whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
+        value   = Value(lit"$answer"),
+        actions = List(
+          Action(
+            content            = msg"site.edit",
+            href               = routes.WhatIsTheNameOfTheOtherPersonController.onPageLoad(CheckMode).url,
+            visuallyHiddenText = Some(msg"site.edit.hidden".withArgs(msg"whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel"))
+          )
+        )
+      )
+  }
+
   def doOtherPeopleHaveControlOverTheTrust: Option[Row] = userAnswers.get(DoOtherPeopleHaveControlOverTheTrustPage) map {
     answer =>
       Row(

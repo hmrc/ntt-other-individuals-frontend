@@ -136,3 +136,9 @@ doOtherPeopleHaveControlOverTheTrust.title = Does the trust have other people ex
 doOtherPeopleHaveControlOverTheTrust.heading = Does the trust have other people exercising control over the trust?
 doOtherPeopleHaveControlOverTheTrust.checkYourAnswersLabel = Does the trust have other people exercising control over the trust?
 doOtherPeopleHaveControlOverTheTrust.error.required = Select yes if other people exercise control over the trust
+
+whatIsTheNameOfTheOtherPerson.title = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.heading = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.error.required = Enter the name of the other person
+whatIsTheNameOfTheOtherPerson.error.length = Other persons name must be 100 characters or less

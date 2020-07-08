@@ -18,12 +18,13 @@ package navigation
 
 import controllers.routes
 import models.{NormalMode, UserAnswers}
-import pages.{IndexPage, Page}
+import pages.{DoOtherPeopleHaveControlOverTheTrustPage, IndexPage, Page}
 import play.api.mvc.Call
 
 object NormalRoutes {
   val routeMap: Page => UserAnswers => Call = {
-    case IndexPage => _ => routes.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(NormalMode)
-    case _ => _ => routes.IndexController.onPageLoad()
+    case IndexPage                                  => _ => routes.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(NormalMode)
+    case DoOtherPeopleHaveControlOverTheTrustPage   => _ => routes.WhatIsTheNameOfTheOtherPersonController.onPageLoad(NormalMode)
+    case _                                          => _ => routes.IndexController.onPageLoad()
   }
 }
