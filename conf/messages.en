@@ -156,3 +156,8 @@ whatIsTheirDateOfBirth.error.required.all = Enter their date of birth
 whatIsTheirDateOfBirth.error.required.two = The date of birth must include {0} and {1}
 whatIsTheirDateOfBirth.error.required = The date of birth must include {0}
 whatIsTheirDateOfBirth.error.invalid = Enter a real date of birth
+
+doYouKnowTheirNationality.title = Do you know their nationality?
+doYouKnowTheirNationality.heading = Do you know their nationality?
+doYouKnowTheirNationality.checkYourAnswersLabel = Do you know their nationality?
+doYouKnowTheirNationality.error.required = Select yes if you do know their nationality
