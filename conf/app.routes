@@ -39,3 +39,8 @@ GET        /doYouKnowTheirNationality                        controllers.DoYouKn
 POST       /doYouKnowTheirNationality                        controllers.DoYouKnowTheirNationalityController.onSubmit(mode: Mode = NormalMode)
 GET        /changeDoYouKnowTheirNationality                  controllers.DoYouKnowTheirNationalityController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeDoYouKnowTheirNationality                  controllers.DoYouKnowTheirNationalityController.onSubmit(mode: Mode = CheckMode)
+
+GET        /whatIsTheirCountryOfNationality                        controllers.WhatIsTheirCountryOfNationalityController.onPageLoad(mode: Mode = NormalMode)
+POST       /whatIsTheirCountryOfNationality                        controllers.WhatIsTheirCountryOfNationalityController.onSubmit(mode: Mode = NormalMode)
+GET        /changeWhatIsTheirCountryOfNationality                  controllers.WhatIsTheirCountryOfNationalityController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeWhatIsTheirCountryOfNationality                  controllers.WhatIsTheirCountryOfNationalityController.onSubmit(mode: Mode = CheckMode)
