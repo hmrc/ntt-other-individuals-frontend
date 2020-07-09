@@ -29,6 +29,7 @@ object NormalRoutes {
     case DoYouKnowTheirDateOfBirthPage              => _ => routes.WhatIsTheirDateOfBirthController.onPageLoad(NormalMode)
     case WhatIsTheirDateOfBirthPage                 => _ => routes.DoYouKnowTheirNationalityController.onPageLoad(NormalMode)
     case DoYouKnowTheirNationalityPage              => _ => routes.WhatIsTheirCountryOfNationalityController.onPageLoad(NormalMode)
+    case WhatIsTheirCountryOfNationalityPage        => _ => routes.DoYouKnowTheirCountryOfResidencyController.onPageLoad(NormalMode)
     case _                                          => _ => routes.IndexController.onPageLoad()
   }
 }

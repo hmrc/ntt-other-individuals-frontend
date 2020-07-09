@@ -167,3 +167,8 @@ whatIsTheirCountryOfNationality.heading = What is their country of nationality?
 whatIsTheirCountryOfNationality.checkYourAnswersLabel = What is their country of nationality?
 whatIsTheirCountryOfNationality.error.required = Enter their country of nationality
 whatIsTheirCountryOfNationality.error.length = The country of nationality must be 100 characters or less
+
+doYouKnowTheirCountryOfResidency.title = doYouKnowTheirCountryOfResidency
+doYouKnowTheirCountryOfResidency.heading = doYouKnowTheirCountryOfResidency
+doYouKnowTheirCountryOfResidency.checkYourAnswersLabel = doYouKnowTheirCountryOfResidency
+doYouKnowTheirCountryOfResidency.error.required = Select yes if doYouKnowTheirCountryOfResidency
