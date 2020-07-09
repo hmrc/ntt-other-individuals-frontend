@@ -111,7 +111,7 @@ class NavigatorSpec extends SpecBase with ScalaCheckPropertyChecks with Generato
         forAll(arbitrary[UserAnswers]) {
           answers =>
             navigator.nextPage(WhatIsTheirCountryOfResidencyPage, NormalMode, answers)
-              .mustBe(routes.AreTheyLegallyIncapbleController.onPageLoad(NormalMode))
+              .mustBe(routes.AreTheyLegallyIncapableController.onPageLoad(NormalMode))
         }
       }
     }

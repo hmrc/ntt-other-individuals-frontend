@@ -21,10 +21,10 @@ import javax.inject.Inject
 import forms.mappings.Mappings
 import play.api.data.Form
 
-class AreTheyLegallyIncapbleFormProvider @Inject() extends Mappings {
+class AreTheyLegallyIncapableFormProvider @Inject() extends Mappings {
 
   def apply(): Form[Boolean] =
     Form(
-      "value" -> boolean("areTheyLegallyIncapble.error.required")
+      "value" -> boolean("areTheyLegallyIncapable.error.required")
     )
 }

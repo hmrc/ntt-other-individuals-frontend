@@ -55,7 +55,7 @@ POST       /whatIsTheirCountryOfResidency                        controllers.Wha
 GET        /changeWhatIsTheirCountryOfResidency                  controllers.WhatIsTheirCountryOfResidencyController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeWhatIsTheirCountryOfResidency                  controllers.WhatIsTheirCountryOfResidencyController.onSubmit(mode: Mode = CheckMode)
 
-GET        /areTheyLegallyIncapble                        controllers.AreTheyLegallyIncapbleController.onPageLoad(mode: Mode = NormalMode)
-POST       /areTheyLegallyIncapble                        controllers.AreTheyLegallyIncapbleController.onSubmit(mode: Mode = NormalMode)
-GET        /changeAreTheyLegallyIncapble                  controllers.AreTheyLegallyIncapbleController.onPageLoad(mode: Mode = CheckMode)
-POST       /changeAreTheyLegallyIncapble                  controllers.AreTheyLegallyIncapbleController.onSubmit(mode: Mode = CheckMode)
+GET        /areTheyLegallyIncapable                        controllers.AreTheyLegallyIncapableController.onPageLoad(mode: Mode = NormalMode)
+POST       /areTheyLegallyIncapable                        controllers.AreTheyLegallyIncapableController.onSubmit(mode: Mode = NormalMode)
+GET        /changeAreTheyLegallyIncapable                  controllers.AreTheyLegallyIncapableController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeAreTheyLegallyIncapable                  controllers.AreTheyLegallyIncapableController.onSubmit(mode: Mode = CheckMode)

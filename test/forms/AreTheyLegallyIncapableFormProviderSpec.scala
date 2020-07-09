@@ -14,18 +14,32 @@
  * limitations under the License.
  */
 
-package pages
+package forms
 
-import pages.behaviours.PageBehaviours
+import forms.behaviours.BooleanFieldBehaviours
+import play.api.data.FormError
 
-class AreTheyLegallyIncapblePageSpec extends PageBehaviours {
+class AreTheyLegallyIncapableFormProviderSpec extends BooleanFieldBehaviours {
 
-  "AreTheyLegallyIncapblePage" - {
+  val requiredKey = "areTheyLegallyIncapable.error.required"
+  val invalidKey = "error.boolean"
 
-    beRetrievable[Boolean](AreTheyLegallyIncapblePage)
+  val form = new AreTheyLegallyIncapableFormProvider()()
 
-    beSettable[Boolean](AreTheyLegallyIncapblePage)
+  ".value" - {
 
-    beRemovable[Boolean](AreTheyLegallyIncapblePage)
+    val fieldName = "value"
+
+    behave like booleanField(
+      form,
+      fieldName,
+      invalidError = FormError(fieldName, invalidKey)
+    )
+
+    behave like mandatoryField(
+      form,
+      fieldName,
+      requiredError = FormError(fieldName, requiredKey)
+    )
   }
 }

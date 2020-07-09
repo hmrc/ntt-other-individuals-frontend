@@ -179,7 +179,7 @@ whatIsTheirCountryOfResidency.checkYourAnswersLabel = What is their country of r
 whatIsTheirCountryOfResidency.error.required = Enter their country of residency
 whatIsTheirCountryOfResidency.error.length = Country of residency must be 100 characters or less
 
-areTheyLegallyIncapble.title = areTheyLegallyIncapble
-areTheyLegallyIncapble.heading = areTheyLegallyIncapble
-areTheyLegallyIncapble.checkYourAnswersLabel = areTheyLegallyIncapble
-areTheyLegallyIncapble.error.required = Select yes if areTheyLegallyIncapble
+areTheyLegallyIncapable.title = Are they legally incapable?
+areTheyLegallyIncapable.heading = Are they legally incapable?
+areTheyLegallyIncapable.checkYourAnswersLabel = Are they legally incapable?
+areTheyLegallyIncapable.error.required = Select yes if they are legally incapable

@@ -17,7 +17,7 @@
 package controllers
 
 import base.SpecBase
-import forms.AreTheyLegallyIncapbleFormProvider
+import forms.AreTheyLegallyIncapableFormProvider
 import matchers.JsonMatchers
 import models.{NormalMode, UserAnswers}
 import navigation.{FakeNavigator, Navigator}
@@ -25,7 +25,7 @@ import org.mockito.ArgumentCaptor
 import org.mockito.Matchers.any
 import org.mockito.Mockito.{times, verify, when}
 import org.scalatestplus.mockito.MockitoSugar
-import pages.AreTheyLegallyIncapblePage
+import pages.AreTheyLegallyIncapablePage
 import play.api.inject.bind
 import play.api.libs.json.{JsObject, Json}
 import play.api.mvc.Call
@@ -37,14 +37,14 @@ import uk.gov.hmrc.viewmodels.{NunjucksSupport, Radios}
 
 import scala.concurrent.Future
 
-class AreTheyLegallyIncapbleControllerSpec extends SpecBase with MockitoSugar with NunjucksSupport with JsonMatchers {
+class AreTheyLegallyIncapableControllerSpec extends SpecBase with MockitoSugar with NunjucksSupport with JsonMatchers {
 
   def onwardRoute = Call("GET", "/foo")
 
-  val formProvider = new AreTheyLegallyIncapbleFormProvider()
+  val formProvider = new AreTheyLegallyIncapableFormProvider()
   val form = formProvider()
 
-  lazy val areTheyLegallyIncapbleRoute = routes.AreTheyLegallyIncapbleController.onPageLoad(NormalMode).url
+  lazy val areTheyLegallyIncapbleRoute = routes.AreTheyLegallyIncapableController.onPageLoad(NormalMode).url
 
   "AreTheyLegallyIncapble Controller" - {
 
@@ -70,7 +70,7 @@ class AreTheyLegallyIncapbleControllerSpec extends SpecBase with MockitoSugar wi
         "radios" -> Radios.yesNo(form("value"))
       )
 
-      templateCaptor.getValue mustEqual "areTheyLegallyIncapble.njk"
+      templateCaptor.getValue mustEqual "areTheyLegallyIncapable.njk"
       jsonCaptor.getValue must containJson(expectedJson)
 
       application.stop()
@@ -81,7 +81,7 @@ class AreTheyLegallyIncapbleControllerSpec extends SpecBase with MockitoSugar wi
       when(mockRenderer.render(any(), any())(any()))
         .thenReturn(Future.successful(Html("")))
 
-      val userAnswers = UserAnswers(userAnswersId).set(AreTheyLegallyIncapblePage, true).success.value
+      val userAnswers = UserAnswers(userAnswersId).set(AreTheyLegallyIncapablePage, true).success.value
       val application = applicationBuilder(userAnswers = Some(userAnswers)).build()
       val request = FakeRequest(GET, areTheyLegallyIncapbleRoute)
       val templateCaptor = ArgumentCaptor.forClass(classOf[String])
@@ -101,7 +101,7 @@ class AreTheyLegallyIncapbleControllerSpec extends SpecBase with MockitoSugar wi
         "radios" -> Radios.yesNo(filledForm("value"))
       )
 
-      templateCaptor.getValue mustEqual "areTheyLegallyIncapble.njk"
+      templateCaptor.getValue mustEqual "areTheyLegallyIncapable.njk"
       jsonCaptor.getValue must containJson(expectedJson)
 
       application.stop()
@@ -157,7 +157,7 @@ class AreTheyLegallyIncapbleControllerSpec extends SpecBase with MockitoSugar wi
         "radios" -> Radios.yesNo(boundForm("value"))
       )
 
-      templateCaptor.getValue mustEqual "areTheyLegallyIncapble.njk"
+      templateCaptor.getValue mustEqual "areTheyLegallyIncapable.njk"
       jsonCaptor.getValue must containJson(expectedJson)
 
       application.stop()

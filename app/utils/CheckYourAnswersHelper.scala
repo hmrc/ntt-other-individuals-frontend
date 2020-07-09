@@ -29,16 +29,16 @@ import uk.gov.hmrc.viewmodels.Text.Literal
 
 class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messages) {
 
-  def areTheyLegallyIncapble: Option[Row] = userAnswers.get(AreTheyLegallyIncapblePage) map {
+  def areTheyLegallyIncapable: Option[Row] = userAnswers.get(AreTheyLegallyIncapablePage) map {
     answer =>
       Row(
-        key     = Key(msg"areTheyLegallyIncapble.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
+        key     = Key(msg"areTheyLegallyIncapable.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
         value   = Value(yesOrNo(answer)),
         actions = List(
           Action(
             content            = msg"site.edit",
-            href               = routes.AreTheyLegallyIncapbleController.onPageLoad(CheckMode).url,
-            visuallyHiddenText = Some(msg"site.edit.hidden".withArgs(msg"areTheyLegallyIncapble.checkYourAnswersLabel"))
+            href               = routes.AreTheyLegallyIncapableController.onPageLoad(CheckMode).url,
+            visuallyHiddenText = Some(msg"site.edit.hidden".withArgs(msg"areTheyLegallyIncapable.checkYourAnswersLabel"))
           )
         )
       )
