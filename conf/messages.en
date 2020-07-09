@@ -178,3 +178,8 @@ whatIsTheirCountryOfResidency.heading = What is their country of residency?
 whatIsTheirCountryOfResidency.checkYourAnswersLabel = What is their country of residency?
 whatIsTheirCountryOfResidency.error.required = Enter their country of residency
 whatIsTheirCountryOfResidency.error.length = Country of residency must be 100 characters or less
+
+areTheyLegallyIncapble.title = areTheyLegallyIncapble
+areTheyLegallyIncapble.heading = areTheyLegallyIncapble
+areTheyLegallyIncapble.checkYourAnswersLabel = areTheyLegallyIncapble
+areTheyLegallyIncapble.error.required = Select yes if areTheyLegallyIncapble

@@ -38,89 +38,80 @@ class NavigatorSpec extends SpecBase with ScalaCheckPropertyChecks with Generato
 
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(UnknownPage, NormalMode, answers)
               .mustBe(routes.IndexController.onPageLoad())
         }
       }
 
       "must go from Index Page to Do Other have control over trust page" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(IndexPage, NormalMode, answers)
               .mustBe(routes.DoOtherPeopleHaveControlOverTheTrustController.onPageLoad(NormalMode))
         }
       }
 
       "must go from Do Other have control over trust page to what is others name page" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(DoOtherPeopleHaveControlOverTheTrustPage, NormalMode, answers)
               .mustBe(routes.WhatIsTheNameOfTheOtherPersonController.onPageLoad(NormalMode))
         }
       }
 
       "must go from What is others name page to Do you know their DoB" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(WhatIsTheNameOfTheOtherPersonPage, NormalMode, answers)
               .mustBe(routes.DoYouKnowTheirDateOfBirthController.onPageLoad(NormalMode))
         }
       }
 
       "must go from Do you know their DoB to What is their DoB" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(DoYouKnowTheirDateOfBirthPage, NormalMode, answers)
               .mustBe(routes.WhatIsTheirDateOfBirthController.onPageLoad(NormalMode))
         }
       }
 
       "must go from What is their DoB to Do you know their nationality?" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(WhatIsTheirDateOfBirthPage, NormalMode, answers)
               .mustBe(routes.DoYouKnowTheirNationalityController.onPageLoad(NormalMode))
         }
       }
 
       "must go from Do you know their nationality to What is their nationality" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(DoYouKnowTheirNationalityPage, NormalMode, answers)
               .mustBe(routes.WhatIsTheirCountryOfNationalityController.onPageLoad(NormalMode))
         }
       }
 
-      "must go from What is their nationality to Do Yyou know their country of residency" in {
-
+      "must go from What is their nationality to Do You know their country of residency" in {
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(WhatIsTheirCountryOfNationalityPage, NormalMode, answers)
               .mustBe(routes.DoYouKnowTheirCountryOfResidencyController.onPageLoad(NormalMode))
         }
       }
 
       "must go from Do You know their country of residency to What is their country of residency" in {
-
         forAll(arbitrary[UserAnswers]) {
           answers =>
-
             navigator.nextPage(DoYouKnowTheirCountryOfResidencyPage, NormalMode, answers)
               .mustBe(routes.WhatIsTheirCountryOfResidencyController.onPageLoad(NormalMode))
+        }
+      }
+
+      "must go from What is their country of residency to Are they legally incapable" in {
+        forAll(arbitrary[UserAnswers]) {
+          answers =>
+            navigator.nextPage(WhatIsTheirCountryOfResidencyPage, NormalMode, answers)
+              .mustBe(routes.AreTheyLegallyIncapbleController.onPageLoad(NormalMode))
         }
       }
     }

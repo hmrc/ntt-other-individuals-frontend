@@ -31,6 +31,7 @@ object NormalRoutes {
     case DoYouKnowTheirNationalityPage              => _ => routes.WhatIsTheirCountryOfNationalityController.onPageLoad(NormalMode)
     case WhatIsTheirCountryOfNationalityPage        => _ => routes.DoYouKnowTheirCountryOfResidencyController.onPageLoad(NormalMode)
     case DoYouKnowTheirCountryOfResidencyPage       => _ => routes.WhatIsTheirCountryOfResidencyController.onPageLoad(NormalMode)
+    case WhatIsTheirCountryOfResidencyPage          => _ => routes.AreTheyLegallyIncapbleController.onPageLoad(NormalMode)
     case _                                          => _ => routes.IndexController.onPageLoad()
   }
 }
