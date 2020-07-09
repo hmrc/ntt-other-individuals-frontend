@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import models._
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.{Arbitrary, Gen}
-
-trait ModelGenerators {
-
-  implicit lazy val arbitraryDoYouWantToAddAnotherIndividual: Arbitrary[DoYouWantToAddAnotherIndividual] =
-    Arbitrary {
-      Gen.oneOf(DoYouWantToAddAnotherIndividual.values.toSeq)
-    }
+object CheckYourAnswersPage extends Page {
+  override def toString: String = "checkYourAnswers"
 }

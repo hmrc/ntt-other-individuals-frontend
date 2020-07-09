@@ -10,6 +10,7 @@ GET        /language/:lang                              controllers.LanguageSwit
 GET        /this-service-has-been-reset                 controllers.SessionExpiredController.onPageLoad
 
 GET        /check-your-answers                          controllers.CheckYourAnswersController.onPageLoad
+POST       /check-your-answers                          controllers.CheckYourAnswersController.onSubmit
 
 GET        /unauthorised                                controllers.UnauthorisedController.onPageLoad
 
@@ -59,3 +60,8 @@ GET        /areTheyLegallyIncapable                        controllers.AreTheyLe
 POST       /areTheyLegallyIncapable                        controllers.AreTheyLegallyIncapableController.onSubmit(mode: Mode = NormalMode)
 GET        /changeAreTheyLegallyIncapable                  controllers.AreTheyLegallyIncapableController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeAreTheyLegallyIncapable                  controllers.AreTheyLegallyIncapableController.onSubmit(mode: Mode = CheckMode)
+
+GET        /doYouWantToAddAnotherIndividual                        controllers.DoYouWantToAddAnotherIndividualController.onPageLoad(mode: Mode = NormalMode)
+POST       /doYouWantToAddAnotherIndividual                        controllers.DoYouWantToAddAnotherIndividualController.onSubmit(mode: Mode = NormalMode)
+GET        /changeDoYouWantToAddAnotherIndividual                  controllers.DoYouWantToAddAnotherIndividualController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeDoYouWantToAddAnotherIndividual                  controllers.DoYouWantToAddAnotherIndividualController.onSubmit(mode: Mode = CheckMode)

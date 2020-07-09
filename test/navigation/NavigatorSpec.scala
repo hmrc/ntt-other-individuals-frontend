@@ -114,6 +114,22 @@ class NavigatorSpec extends SpecBase with ScalaCheckPropertyChecks with Generato
               .mustBe(routes.AreTheyLegallyIncapableController.onPageLoad(NormalMode))
         }
       }
+
+      "must go from Are they legally incapable to Check your answers" in {
+        forAll(arbitrary[UserAnswers]) {
+          answers =>
+            navigator.nextPage(AreTheyLegallyIncapablePage, NormalMode, answers)
+              .mustBe(routes.CheckYourAnswersController.onPageLoad())
+        }
+      }
+
+      "must go from Check your answers to Do you want to add another individual" in {
+        forAll(arbitrary[UserAnswers]) {
+          answers =>
+            navigator.nextPage(CheckYourAnswersPage, NormalMode, answers)
+              .mustBe(routes.DoYouWantToAddAnotherIndividualController.onPageLoad(NormalMode))
+        }
+      }
     }
 
     "in Check mode" - {

@@ -21,6 +21,9 @@ import pages._
 
 trait PageGenerators {
 
+  implicit lazy val arbitraryDoYouWantToAddAnotherIndividualPage: Arbitrary[DoYouWantToAddAnotherIndividualPage.type] =
+    Arbitrary(DoYouWantToAddAnotherIndividualPage)
+
   implicit lazy val arbitraryAreTheyLegallyIncapblePage: Arbitrary[AreTheyLegallyIncapablePage.type] =
     Arbitrary(AreTheyLegallyIncapablePage)
 

@@ -18,10 +18,15 @@ package controllers
 
 import com.google.inject.Inject
 import controllers.actions.{DataRequiredAction, DataRetrievalAction, IdentifierAction}
+import models.{Mode, NormalMode, UserAnswers}
+import navigation.Navigator
+import pages.{AreTheyLegallyIncapablePage, CheckYourAnswersPage}
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import renderer.Renderer
+import repositories.SessionRepository
+import services.CountryService
 import uk.gov.hmrc.play.bootstrap.controller.FrontendBaseController
 import uk.gov.hmrc.viewmodels.{NunjucksSupport, SummaryList}
 import utils.CheckYourAnswersHelper
@@ -34,19 +39,41 @@ class CheckYourAnswersController @Inject()(
     getData: DataRetrievalAction,
     requireData: DataRequiredAction,
     val controllerComponents: MessagesControllerComponents,
-    renderer: Renderer
+    renderer: Renderer,
+    countryService: CountryService,
+    navigator: Navigator,
+    sessionRepository: SessionRepository
 )(implicit ec: ExecutionContext) extends FrontendBaseController with I18nSupport with NunjucksSupport {
 
   def onPageLoad(): Action[AnyContent] = (identify andThen getData andThen requireData).async {
     implicit request =>
 
-      val helper = new CheckYourAnswersHelper(request.userAnswers)
+      val helper = new CheckYourAnswersHelper(request.userAnswers, countryService)
 
-      val answers: Seq[SummaryList.Row] = Seq()
+      val answers: Seq[SummaryList.Row] = Seq(
+        helper.doOtherPeopleHaveControlOverTheTrust,
+        helper.whatIsTheNameOfTheOtherPerson,
+        helper.doYouKnowTheirDateOfBirth,
+        helper.whatIsTheirDateOfBirth,
+        helper.doYouKnowTheirNationality,
+        helper.whatIsTheirCountryOfNationality,
+        helper.doYouKnowTheirCountryOfResidency,
+        helper.whatIsTheirCountryOfResidency,
+        helper.areTheyLegallyIncapable
+      ).flatten
 
       renderer.render(
         "check-your-answers.njk",
         Json.obj("list" -> answers)
       ).map(Ok(_))
+  }
+
+  def onSubmit(): Action[AnyContent] = (identify andThen getData andThen requireData).async {
+
+    implicit request =>
+      val answers = UserAnswers(request.internalId)
+      for {
+        _              <- sessionRepository.set(answers)
+      } yield Redirect(navigator.nextPage(CheckYourAnswersPage, NormalMode, answers))
   }
 }

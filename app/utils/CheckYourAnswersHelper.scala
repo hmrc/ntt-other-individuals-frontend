@@ -23,11 +23,27 @@ import models.{CheckMode, UserAnswers}
 import pages._
 import play.api.i18n.Messages
 import CheckYourAnswersHelper._
+import services.CountryService
 import uk.gov.hmrc.viewmodels._
 import uk.gov.hmrc.viewmodels.SummaryList._
 import uk.gov.hmrc.viewmodels.Text.Literal
 
-class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messages) {
+class CheckYourAnswersHelper(userAnswers: UserAnswers, countryService: CountryService)(implicit messages: Messages) {
+
+  def doYouWantToAddAnotherIndividual: Option[Row] = userAnswers.get(DoYouWantToAddAnotherIndividualPage) map {
+    answer =>
+      Row(
+        key     = Key(msg"doYouWantToAddAnotherIndividual.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
+        value   = Value(msg"doYouWantToAddAnotherIndividual.$answer"),
+        actions = List(
+          Action(
+            content            = msg"site.edit",
+            href               = routes.DoYouWantToAddAnotherIndividualController.onPageLoad(CheckMode).url,
+            visuallyHiddenText = Some(msg"site.edit.hidden".withArgs(msg"doYouWantToAddAnotherIndividual.checkYourAnswersLabel"))
+          )
+        )
+      )
+  }
 
   def areTheyLegallyIncapable: Option[Row] = userAnswers.get(AreTheyLegallyIncapablePage) map {
     answer =>
@@ -48,7 +64,7 @@ class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messag
     answer =>
       Row(
         key     = Key(msg"whatIsTheirCountryOfResidency.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
-        value   = Value(lit"$answer"),
+        value   = Value(country(answer)),
         actions = List(
           Action(
             content            = msg"site.edit",
@@ -78,7 +94,7 @@ class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messag
     answer =>
       Row(
         key     = Key(msg"whatIsTheirCountryOfNationality.checkYourAnswersLabel", classes = Seq("govuk-!-width-one-half")),
-        value   = Value(lit"$answer"),
+        value   = Value(country(answer)),
         actions = List(
           Action(
             content            = msg"site.edit",
@@ -163,6 +179,9 @@ class CheckYourAnswersHelper(userAnswers: UserAnswers)(implicit messages: Messag
         )
       )
   }
+
+  private def country(code: String): Content =
+    lit"${countryService.getCountryByCode(code).getOrElse("")}"
 
   private def yesOrNo(answer: Boolean): Content =
     if (answer) {

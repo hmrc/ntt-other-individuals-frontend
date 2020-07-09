@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import models._
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.{Arbitrary, Gen}
+import models.DoYouWantToAddAnotherIndividual
+import pages.behaviours.PageBehaviours
 
-trait ModelGenerators {
+class DoYouWantToAddAnotherIndividualSpec extends PageBehaviours {
 
-  implicit lazy val arbitraryDoYouWantToAddAnotherIndividual: Arbitrary[DoYouWantToAddAnotherIndividual] =
-    Arbitrary {
-      Gen.oneOf(DoYouWantToAddAnotherIndividual.values.toSeq)
-    }
+  "DoYouWantToAddAnotherIndividualPage" - {
+
+    beRetrievable[DoYouWantToAddAnotherIndividual](DoYouWantToAddAnotherIndividualPage)
+
+    beSettable[DoYouWantToAddAnotherIndividual](DoYouWantToAddAnotherIndividualPage)
+
+    beRemovable[DoYouWantToAddAnotherIndividual](DoYouWantToAddAnotherIndividualPage)
+  }
 }

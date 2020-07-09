@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package generators
+package pages
 
-import models._
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.{Arbitrary, Gen}
+import models.DoYouWantToAddAnotherIndividual
+import play.api.libs.json.JsPath
 
-trait ModelGenerators {
+case object DoYouWantToAddAnotherIndividualPage extends QuestionPage[DoYouWantToAddAnotherIndividual] {
 
-  implicit lazy val arbitraryDoYouWantToAddAnotherIndividual: Arbitrary[DoYouWantToAddAnotherIndividual] =
-    Arbitrary {
-      Gen.oneOf(DoYouWantToAddAnotherIndividual.values.toSeq)
-    }
+  override def path: JsPath = JsPath \ toString
+
+  override def toString: String = "doYouWantToAddAnotherIndividual"
 }

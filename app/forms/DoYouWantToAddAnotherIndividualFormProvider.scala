@@ -14,16 +14,18 @@
  * limitations under the License.
  */
 
-package generators
+package forms
 
-import models._
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.{Arbitrary, Gen}
+import javax.inject.Inject
 
-trait ModelGenerators {
+import forms.mappings.Mappings
+import play.api.data.Form
+import models.DoYouWantToAddAnotherIndividual
 
-  implicit lazy val arbitraryDoYouWantToAddAnotherIndividual: Arbitrary[DoYouWantToAddAnotherIndividual] =
-    Arbitrary {
-      Gen.oneOf(DoYouWantToAddAnotherIndividual.values.toSeq)
-    }
+class DoYouWantToAddAnotherIndividualFormProvider @Inject() extends Mappings {
+
+  def apply(): Form[DoYouWantToAddAnotherIndividual] =
+    Form(
+      "value" -> enumerable[DoYouWantToAddAnotherIndividual]("doYouWantToAddAnotherIndividual.error.required")
+    )
 }
