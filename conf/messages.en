@@ -188,5 +188,6 @@ doYouWantToAddAnotherIndividual.title = Do you want to add another individual?
 doYouWantToAddAnotherIndividual.heading = Do you want to add another individual?
 doYouWantToAddAnotherIndividual.yesIWantToAddThemNow = Yes, I want to add them now
 doYouWantToAddAnotherIndividual.yesIWantToAddThemLater = Yes, I want to add them later
+doYouWantToAddAnotherIndividual.noIHaveAddedAllOtherIndividuals = No I have added all other individuals
 doYouWantToAddAnotherIndividual.checkYourAnswersLabel = Do you want to add another individual?
 doYouWantToAddAnotherIndividual.error.required = Select if you would like to add another individual

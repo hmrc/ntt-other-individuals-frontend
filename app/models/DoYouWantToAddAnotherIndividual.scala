@@ -41,7 +41,7 @@ object DoYouWantToAddAnotherIndividual extends Enumerable.Implicits {
     val items = Seq(
       Radios.Radio(msg"doYouWantToAddAnotherIndividual.yesIWantToAddThemNow", YesIWantToAddThemNow.toString),
       Radios.Radio(msg"doYouWantToAddAnotherIndividual.yesIWantToAddThemLater", YesIWantToAddThemLater.toString),
-      Radios.Radio(msg"doYouWantToAddAnotherIndividual.yesIWantToAddThemLater", NoIHaveAddedAllOtherIndividuals.toString)
+      Radios.Radio(msg"doYouWantToAddAnotherIndividual.noIHaveAddedAllOtherIndividuals", NoIHaveAddedAllOtherIndividuals.toString)
     )
 
     Radios(field, items)
