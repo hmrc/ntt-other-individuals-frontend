@@ -73,7 +73,7 @@ class CheckYourAnswersController @Inject()(
     implicit request =>
       val answers = UserAnswers(request.internalId)
       for {
-        _              <- sessionRepository.set(answers)
+        _ <- sessionRepository.set(answers)
       } yield Redirect(navigator.nextPage(CheckYourAnswersPage, NormalMode, answers))
   }
 }
