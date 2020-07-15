@@ -129,3 +129,65 @@ compliant.nine.p2.1=The service was built using parts that were tested by the
 compliant.nine.p2.2=Digital Accessibility Centre
 compliant.nine.p2.3=The full service was tested by HMRC and included disabled users.
 compliant.nine.p3=This page was prepared on [date when it was first published]. It was last updated on [date when it was last updated].
+
+otherpeople.start=Start Other People Journey
+
+doOtherPeopleHaveControlOverTheTrust.title = Does the trust have other people exercising control over the trust?
+doOtherPeopleHaveControlOverTheTrust.heading = Does the trust have other people exercising control over the trust?
+doOtherPeopleHaveControlOverTheTrust.checkYourAnswersLabel = Does the trust have other people exercising control over the trust?
+doOtherPeopleHaveControlOverTheTrust.error.required = Select yes if other people exercise control over the trust
+
+whatIsTheNameOfTheOtherPerson.title = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.heading = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.checkYourAnswersLabel = What is the name of the other person?
+whatIsTheNameOfTheOtherPerson.error.required = Enter the name of the other person
+whatIsTheNameOfTheOtherPerson.error.length = Other persons name must be 100 characters or less
+
+doYouKnowTheirDateOfBirth.title = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.heading = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.checkYourAnswersLabel = Do you know their date of birth?
+doYouKnowTheirDateOfBirth.error.required = Select yes if do know their date of birth
+
+whatIsTheirDateOfBirth.title = What is their date of birth?
+whatIsTheirDateOfBirth.heading = What is their date of birth?
+whatIsTheirDateOfBirth.hint = For example, 12 11 2007
+whatIsTheirDateOfBirth.checkYourAnswersLabel = What is their date of birth?
+whatIsTheirDateOfBirth.error.required.all = Enter their date of birth
+whatIsTheirDateOfBirth.error.required.two = The date of birth must include {0} and {1}
+whatIsTheirDateOfBirth.error.required = The date of birth must include {0}
+whatIsTheirDateOfBirth.error.invalid = Enter a real date of birth
+
+doYouKnowTheirNationality.title = Do you know their nationality?
+doYouKnowTheirNationality.heading = Do you know their nationality?
+doYouKnowTheirNationality.checkYourAnswersLabel = Do you know their nationality?
+doYouKnowTheirNationality.error.required = Select yes if you do know their nationality
+
+whatIsTheirCountryOfNationality.title = What is their country of nationality?
+whatIsTheirCountryOfNationality.heading = What is their country of nationality?
+whatIsTheirCountryOfNationality.checkYourAnswersLabel = What is their country of nationality?
+whatIsTheirCountryOfNationality.error.required = Enter their country of nationality
+whatIsTheirCountryOfNationality.error.length = The country of nationality must be 100 characters or less
+
+doYouKnowTheirCountryOfResidency.title = Do you know their country of residency?
+doYouKnowTheirCountryOfResidency.heading = Do you know their country of residency?
+doYouKnowTheirCountryOfResidency.checkYourAnswersLabel = Do you know their country of residency?
+doYouKnowTheirCountryOfResidency.error.required = Select yes if you know their country of residency
+
+whatIsTheirCountryOfResidency.title = What is their country of residency?
+whatIsTheirCountryOfResidency.heading = What is their country of residency?
+whatIsTheirCountryOfResidency.checkYourAnswersLabel = What is their country of residency?
+whatIsTheirCountryOfResidency.error.required = Enter their country of residency
+whatIsTheirCountryOfResidency.error.length = Country of residency must be 100 characters or less
+
+areTheyLegallyIncapable.title = Are they legally incapable?
+areTheyLegallyIncapable.heading = Are they legally incapable?
+areTheyLegallyIncapable.checkYourAnswersLabel = Are they legally incapable?
+areTheyLegallyIncapable.error.required = Select yes if they are legally incapable
+
+doYouWantToAddAnotherIndividual.title = Do you want to add another individual?
+doYouWantToAddAnotherIndividual.heading = Do you want to add another individual?
+doYouWantToAddAnotherIndividual.yesIWantToAddThemNow = Yes, I want to add them now
+doYouWantToAddAnotherIndividual.yesIWantToAddThemLater = Yes, I want to add them later
+doYouWantToAddAnotherIndividual.noIHaveAddedAllOtherIndividuals = No I have added all other individuals
+doYouWantToAddAnotherIndividual.checkYourAnswersLabel = Do you want to add another individual?
+doYouWantToAddAnotherIndividual.error.required = Select if you would like to add another individual
